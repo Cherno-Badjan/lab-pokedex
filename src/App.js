@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -20,12 +20,13 @@ export default class App extends Component {
             <Route path="/" exact render={(routerProps) => <HomePage {...routerProps} />} />
             <Route path="/search" exact render={(routerProps) => <SearchPage {...routerProps} />} />
           </Switch>
-        </Router>
-        <footer>
-          All rights reserved.Pokedex Limited. 2021
+          <footer>
+            All rights reserved.Pokedex Limited. 2021
         </footer>
+        </Router>
       </div>
     )
   }
 }
+
 

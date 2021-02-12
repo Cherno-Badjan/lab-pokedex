@@ -5,7 +5,7 @@ export default class HomePage extends Component {
         return (
             <div>
                 <h1>Welcome to the Ultimate Pokedex Gallery!</h1>
-                <img src='somelink' alt='pokemon'></img>
+                {/* <img src='somelink' alt='pokemon'></img> */}
             </div>
         )
     }
