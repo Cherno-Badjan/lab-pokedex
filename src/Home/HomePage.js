@@ -3,10 +3,11 @@ import React, { Component } from 'react'
 export default class HomePage extends Component {
     render() {
         return (
-            <div>
-                <h1>Welcome to the Ultimate Pokedex Gallery!</h1>
-                {/* <img src='somelink' alt='pokemon'></img> */}
-            </div>
+            <section className="section">
+                <h1>Welcome To The Ultimate Pokedex Gallery!</h1>
+
+            </section>
+
         )
     }
 }

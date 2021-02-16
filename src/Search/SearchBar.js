@@ -6,7 +6,7 @@ export default class SearchBar extends Component {
             <div>
 
                 <input placeholder="Choose A Pokemon" onChange={this.props.handleChange} value={this.props.currentValue} />
-                <button onclick={this.props.handleClick} >Submit</button>
+                <button onclick={this.props.handleChange} >Submit</button>
             </div>
 
         )
