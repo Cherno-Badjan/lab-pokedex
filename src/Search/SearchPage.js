@@ -48,8 +48,42 @@ export default class SearchPage extends Component {
 
 
     render() {
+        return (
+            <>
+                <label>
+                    SEARCH
+            <input onChange={this.handleQuery} />
+                </label>
 
-//         if (this.state.sortBy) {
+                <button onClick={this.handleClick}>Search</button>
+
+                {this.state.pokemon.map(poke =>
+                    <div key={poke.pokemon}>
+
+                        <p><img src={poke.url_image} alt="poke" /></p>
+                        <p>Name:{poke.pokemon}</p>
+                        <p>Type: {poke.type_1} </p>
+                        <p>Attack:{poke.attack}</p>
+                        <p>Defense:{poke.defense}</p>
+                    </div>)
+
+
+                }
+
+
+            </>
+        )
+    }
+}
+
+
+
+
+
+
+
+
+{/* if (this.state.sortBy) { */ }
 
 //             // if (this.state.sortBy) {
 //             if (typeof (pokemonData[0][this.state.sortBy]) === 'number') {
