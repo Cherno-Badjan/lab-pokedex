@@ -23,10 +23,13 @@ export default class DetailPage extends Component {
                 {this.state.loading ? <Spinner /> :
                     <div>
                         <img src={this.state.pokemonData.url_image} alt="pokemon" />
-                        <p>{this.state.pokemonData.pokemon}</p>
-                        <p>{this.state.pokemonData.attack}</p>
-                        <p>{this.state.pokemonData.defense}</p>
-                        <p>{this.state.pokemonData.type_1}</p>
+                        <p>Pokemon:{this.state.pokemonData.pokemon}</p>
+                        <p>Attack:{this.state.pokemonData.attack}</p>
+                        <p>Defense:{this.state.pokemonData.defense}</p>
+                        <p>Type:{this.state.pokemonData.type_1}</p>
+                        <p>Shape:{this.state.pokemonData.shape}</p>
+                        <p>Ability:{this.state.pokemonData.ability_1}</p>
+                        <p>Other Ability:{this.state.pokemonData.ability_2}</p>
 
                     </div>
                 }

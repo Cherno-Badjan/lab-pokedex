@@ -12,6 +12,10 @@ export default class SearchPage extends Component {
         sortBy: '',
         query: '',
         loading: false,
+        currentPage: 1,
+        perPage: 10,
+        totalPokemon: 0,
+
     }
 
     componentDidMount = async () => {
@@ -20,11 +24,12 @@ export default class SearchPage extends Component {
 
     fetchPokemon = async () => {
         this.setState({ loading: true });
-        const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=${this.state.sortBy}&direction=${this.state.sortOrder}`);
+        const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=${this.state.sortBy}&direction=${this.state.sortOrder}&perPage=${this.state.perPage}&page${this.state.currentPage}`);
 
         this.setState({
             pokemonData: data.body.results,
             loading: false,
+            totalPokemon: data.body.count,
         })
     }
 
