@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.pokemons{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+}
+.PokeList {
+  border-radius: 50%;
+  text-align: center;
+  background-image: url(https://wallpaperaccess.com/full/3137230.jpg)
+}
+
+img{
+  width:200px;
+  height:200px;
+}
+
+li{
+  list-style: none;
+}
+
+.section{
+  text-align: center;
+}

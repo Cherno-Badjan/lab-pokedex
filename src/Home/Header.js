@@ -1,0 +1,20 @@
+import React, { Component } from 'react'
+import { NavLink, withRouter } from 'react-router-dom';
+
+export default withRouter(class Header extends Component {
+
+    render() {
+        return (
+            <header>
+                <NavLink exact activeClassName="selected" to="/"></NavLink>
+                {
+                    this.props.location.pathname !== '/search' && <NavLink exact activeClassName="selected" to="/search">Search</NavLink>
+                }
+                {
+                    this.props.location.pathname === '/search' && <NavLink exact activeClassName="selected" to="/">Home</NavLink>
+                }
+
+            </header>
+        )
+    }
+})
