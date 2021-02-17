@@ -8,7 +8,7 @@ export default class Sort extends Component {
                     value={this.props.currentValue}>
 
                     {this.props.options.map(
-                        listItem => <option value={listItem.value} key={listItem}>{listItem.textContent}</option>)}
+                        option => <option value={option.value} key={option.value}>{option.name}</option>)}
                 </select>
             </>
         )
