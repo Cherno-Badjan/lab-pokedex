@@ -3,10 +3,11 @@ import request from 'superagent';
 import SearchBar from './SearchBar.js';
 import Sort from './Sort.js';
 import Spinner from './Spinner.js';
+import PokeList from './PokeList.js';
 
 export default class SearchPage extends Component {
     state = {
-        pokemon: [],
+        pokemonData: [],
         sortOrder: '',
         sortBy: '',
         query: '',
@@ -22,7 +23,7 @@ export default class SearchPage extends Component {
         const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?pokemon=${this.state.query}&sort=${this.state.sortBy}&direction=${this.state.sortOrder}`);
 
         this.setState({
-            pokemon: data.body.results,
+            pokemonData: data.body.results,
             loading: false,
         })
     }
@@ -51,6 +52,7 @@ export default class SearchPage extends Component {
 
 
     render() {
+
         return (
             <>
                 <div>
@@ -61,17 +63,10 @@ export default class SearchPage extends Component {
                  <Sort currentValue={this.state.sortBy} handleChange={this.handleSortBy} options={[{ value: 'pokemon', name: 'Pokemon' }, { value: 'type_1', name: 'Type' }, { value: 'attack', name: 'Attack' }, { value: 'defense', name: 'Defense' }]} />
                     <Sort currentValue={this.state.sortOrder} handleChange={this.handleSortOrder} options={[{ value: 'Ascend', name: 'Ascending' }, { value: 'Descend', name: 'Descending' }]} />
                 </div>
-                <section class="pokemons">
-                    {this.state.loading ? <Spinner /> : this.state.pokemon.map(poke =>
-                        <div key={poke.pokemon} class="PokeList">
-                            <p><img src={poke.url_image} alt="poke" /></p>
-                            <p>Name:{poke.pokemon}</p>
-                            <p>Type: {poke.type_1} </p>
-                            <p>Attack:{poke.attack}</p>
-                            <p>Defense:{poke.defense}</p>
-                        </div>)
-
+                <section className='pokemon'>
+                    {this.state.loading ? <Spinner /> : <PokeList pokemonData={this.state.pokemonData} />
                     }
+
                 </section>
             </>
         )

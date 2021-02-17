@@ -8,6 +8,7 @@ import {
 import HomePage from './Home/HomePage.js';
 import Header from './Home/Header.js';
 import SearchPage from './Search/SearchPage.js';
+import DetailPage from './Details/DetailPage.js';
 
 
 export default class App extends Component {
@@ -19,6 +20,7 @@ export default class App extends Component {
           <Switch>
             <Route path="/" exact render={(routerProps) => <HomePage {...routerProps} />} />
             <Route path="/search" exact render={(routerProps) => <SearchPage {...routerProps} />} />
+            <Route path="/:pokemonName" exact component={DetailPage} />
           </Switch>
           <footer>
             All rights reserved.Pokedex Limited. 2021
