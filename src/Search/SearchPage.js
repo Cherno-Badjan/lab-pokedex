@@ -8,14 +8,27 @@ import request from 'superagent';
 export default class SearchPage extends Component {
     state = {
         pokemon: [],
-        // sortOrder: 'ascending',
-        // sortBy: 'pokebase',
+        sortOrder: 'ascending',
+        sortBy: 'pokebase',
         query: '',
     }
 
-    handleClick = async () => {
-        const data = await request.get('https://pokedex-alchemy.herokuapp.com/api/pokedex');
+    componentDidMount = async () => {
+        await this.fetchPokemon();
     }
+
+    fetchPokemon = async () => {
+        const data = await request.get('https://pokedex-alchemy.herokuapp.com/api/pokedex');
+        this.setState({
+            pokemon: data.body.results,
+        })
+    }
+
+    handleClick = async () => {
+        await this.fetchPokemon();
+    }
+
+
 
     // handleSortBy = (e) => {
     //     this.setState({
@@ -27,16 +40,14 @@ export default class SearchPage extends Component {
     //         sortOrder: e.target.value
     //     })
     // }
-    // handleFilter = (e) => {
-    //     this.setState({
-    //         query: e.target.value
-    //     })
-    // }
-    this.setState({
-        pokemon=data.body.results,
-    })
+    handleQuery = (e) => {
+        this.setState({
+            query: e.target.value
+        })
+    }
 
-render() {
+
+    render() {
 
 //         if (this.state.sortBy) {
 
