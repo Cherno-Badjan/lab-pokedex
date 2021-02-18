@@ -45,7 +45,7 @@
 .PokeList {
   border-radius: 50%;
   text-align: center;
-  background-image: url(https://wallpaperaccess.com/full/3137230.jpg)
+  background-image: url('https://wallpaperaccess.com/full/3137230.jpg')
 }
 
 img{
@@ -57,6 +57,27 @@ li{
   list-style: none;
 }
 
-.section{
+.home-container{
   text-align: center;
+  background-image: url('https://i.pinimg.com/originals/3e/1a/87/3e1a87eae20049fd3d1016973bc37962.jpg');
+  height: 100vh;
+}
+
+.container{
+  background-color: #39e055;
+}
+
+.details-container{
+  text-align: center;
+  background-image: url('https://wallpaperaccess.com/full/3137230.jpg');
+  height:100vh;
+}
+
+.link-display{
+text-decoration: none;
+color: black;
+}
+
+body{
+  font-family: 'Satisfy', cursive;
 }

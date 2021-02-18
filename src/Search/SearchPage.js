@@ -84,27 +84,29 @@ export default class SearchPage extends Component {
 
         return (
             <>
-                <div>
-                    <SearchBar currentValue={this.state.query}
-                        handleChange={this.handleQuery}
-                        handleClick={this.handleClick} />
+                <section className="container">
+                    <div >
+                        <SearchBar currentValue={this.state.query}
+                            handleChange={this.handleQuery}
+                            handleClick={this.handleClick} />
                     Results Per Page:<select onChange={this.handlePerPage}>
-                        <option value={10}>10</option>
-                        <option value={50}>50</option>
-                        <option value={75}>75</option>
-                        <option value={100}>100</option>
-                    </select>
+                            <option value={10}>10</option>
+                            <option value={50}>50</option>
+                            <option value={75}>75</option>
+                            <option value={100}>100</option>
+                        </select>
             Sort By:
                  <Sort currentValue={this.state.sortBy} handleChange={this.handleSortBy} options={[{ value: 'pokemon', name: 'Pokemon' }, { value: 'type_1', name: 'Type' }, { value: 'attack', name: 'Attack' }, { value: 'defense', name: 'Defense' }]} />
-                    <Sort currentValue={this.state.sortOrder} handleChange={this.handleSortOrder} options={[{ value: 'Ascend', name: 'Ascending' }, { value: 'Descend', name: 'Descending' }]} />
-                    <h3>Page {this.state.currentPage}</h3>
-                    <button onClick={this.handlePreviousClick} disabled={this.state.currentPage === 1}>Previous</button>
-                    <button disabled={this.state.currentPage === lastPage} onClick={this.handleNextClick}>Next</button>
-                </div>
-                <section className='pokemon'>
-                    {this.state.loading ? <Spinner /> : <PokeList pokemonData={this.state.pokemonData} />
-                    }
+                        <Sort currentValue={this.state.sortOrder} handleChange={this.handleSortOrder} options={[{ value: 'Ascend', name: 'Ascending' }, { value: 'Descend', name: 'Descending' }]} />
+                        <h3>Page {this.state.currentPage}</h3>
+                        <button onClick={this.handlePreviousClick} disabled={this.state.currentPage === 1}>Previous</button>
+                        <button disabled={this.state.currentPage === lastPage} onClick={this.handleNextClick}>Next</button>
+                    </div>
+                    <section className='pokemon'>
+                        {this.state.loading ? <Spinner /> : <PokeList pokemonData={this.state.pokemonData} />
+                        }
 
+                    </section>
                 </section>
             </>
         )

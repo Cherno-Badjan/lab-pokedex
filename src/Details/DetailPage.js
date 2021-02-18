@@ -18,7 +18,7 @@ export default class DetailPage extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="details-container">
                 <h1>Your Pokemon's Details</h1>
                 {this.state.loading ? <Spinner /> :
                     <div>

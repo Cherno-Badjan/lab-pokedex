@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default class PokeItem extends Component {
     render() {
         return (
-            <Link to={this.props.pokemon.pokemon}>
+            <Link to={this.props.pokemon.pokemon} className="link-display">
                 <li className='PokeList'><img alt='pokemon' src={this.props.pokemon.url_image} />
                     <p>Pokemon Name: {this.props.pokemon.pokebase}</p>
                     <p>Attack: {this.props.pokemon.attack}</p>
